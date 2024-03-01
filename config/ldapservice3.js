@@ -12,19 +12,19 @@ class LDAPService {
       },
     });
 
-    // this.client.on('connect', () => {
-    //   console.log('Connected to LDAP server');
-    //   this.client.ldap.setOption(ldap.LDAP_OPT_PROTOCOL_VERSION, 3);
-    //   this.client.ldap.setOption(ldap.LDAP_OPT_REFERRALS, 0);
-    // });
+    this.client.on('connect', () => {
+      console.log('Connected to LDAP server');
+      this.client.ldap.setOption(ldap.LDAP_OPT_PROTOCOL_VERSION, 3);
+      this.client.ldap.setOption(ldap.LDAP_OPT_REFERRALS, 0);
+    });
 
-    // this.client.on('error', (err) => {
-    //   console.error('LDAP connection error:', err.message);
-    // });
+    this.client.on('error', (err) => {
+      console.error('LDAP connection error:', err.message);
+    });
 
-    // this.client.on('close', () => {
-    //   console.log('LDAP connection closed');
-    // });
+    this.client.on('close', () => {
+      console.log('LDAP connection closed');
+    });
   }
 
   authenticate(username, password, callback) {
