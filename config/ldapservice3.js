@@ -60,6 +60,7 @@ ldapService.authenticate('enrico.notaro@dipvvf.it', 'U2164+m2713', (err, success
 
     // Autenticazione riuscita
     console.log('Autenticazione riuscita' );
+    console.log(ldapService.LDAP_OPT_REFERRALS)
 
     // Puoi eseguire ulteriori azioni dopo l'autenticazione qui
 
